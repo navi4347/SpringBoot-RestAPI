@@ -15,6 +15,7 @@ public class LoginServiceImpl implements LoginService {
 
     @Autowired
     public LoginServiceImpl(LoginRepo loginRepo) {
+
         this.loginRepo = loginRepo;
     }
 

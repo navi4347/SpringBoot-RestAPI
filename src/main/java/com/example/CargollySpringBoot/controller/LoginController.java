@@ -22,7 +22,7 @@ public class LoginController {
     @Autowired
     private LoginRepo loginRepo;
 
-    @GetMapping("/all")
+    @GetMapping("/login")
     public ResponseEntity<List<Login>> getAllLogins() {
         List<Login> loginList = loginRepo.findAll();
         if (!loginList.isEmpty()) {
@@ -32,7 +32,7 @@ public class LoginController {
         }
     }
 
-    @PostMapping("/logins")
+    @PostMapping("/login")
     public ResponseEntity<?> createLogin(@RequestBody LoginRequest loginRequest) {
         Login savedLogin = loginService.createLogin(loginRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedLogin);
