@@ -12,4 +12,6 @@ public interface SignupService {
 
     void deleteSignup(Long userid);
 
+    boolean authenticate(String username, String password);
+
 }

@@ -5,5 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface SignupRepo extends JpaRepository<Signup, Long> {
     boolean existsByUsername(String username);
+    Signup findByUsernameAndPassword(String username, String password);
 
 }

@@ -49,5 +49,10 @@ public class SignupServiceImpl implements SignupService {
     public void deleteSignup(Long userid) {
         signupRepo.deleteById(userid);
     }
+    @Override
+    public boolean authenticate(String username, String password) {
+        Signup user = signupRepo.findByUsernameAndPassword(username, password);
+        return user != null;
+    }
 
 }
