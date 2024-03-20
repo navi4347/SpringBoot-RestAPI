@@ -21,13 +21,14 @@ public class SignupServiceImpl implements SignupService {
     @Override
     public Signup createSignup(SignupRequest signupRequest) {
         if (signupRepo.existsByUsername(signupRequest.getUsername())) {
-            throw new IllegalArgumentException("Username already exists");
+            return null;
         }
         Signup signup = new Signup();
         signup.setUsername(signupRequest.getUsername());
         signup.setPassword(signupRequest.getPassword());
         return signupRepo.save(signup);
     }
+
 
     @Override
     public Signup getSignupById(Long userid) {
